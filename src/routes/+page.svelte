@@ -51,7 +51,9 @@
 	}
 
 	onMount(() => {
-		filterArticlesByTag(active_tag);
+		if (active_tag !== 'all') {
+			filterArticlesByTag(active_tag);
+		}
 	});
 </script>
 
