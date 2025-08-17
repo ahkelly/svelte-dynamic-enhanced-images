@@ -31,15 +31,14 @@
 			enhanced_image_path: all_thumbnail_images[image_key]?.default
 		};
 	});
-	let articles_array = $state(sitemap_articles_with_enhanced_image);
 </script>
 
 <section id="related-articles">
-	{#if articles_array.length > 0}
+	{#if sitemap_articles_with_enhanced_image.length > 0}
 		<h2 class="bg-success p-2 text-white mb-0 {article_header_class}">{article_header}</h2>
 		{@html article_sub}
 		<div class="p-4 rounded shadow mb-4">
-			{#each articles_array as item, i}
+			{#each sitemap_articles_with_enhanced_image as item, i}
 				<div class="row align-items-center">
 					<div class="col-12 col-md-10">
 						<h3 class="fs-5">
@@ -57,7 +56,7 @@
 						{/if}
 					</div>
 				</div>
-				{#if i < articles_array.length - 1}
+				{#if i < sitemap_articles_with_enhanced_image.length - 1}
 					<hr class="my-2" />
 				{/if}
 			{/each}
